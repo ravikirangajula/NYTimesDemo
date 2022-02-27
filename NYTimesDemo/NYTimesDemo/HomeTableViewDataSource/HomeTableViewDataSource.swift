@@ -1,46 +1,14 @@
 //
-//  ViewController.swift
+//  HomeTableViewDataSource.swift
 //  NYTimesDemo
 //
 //  Created by Gajula Ravi Kiran on 27/02/2022.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: BaseViewController {
-    @IBOutlet weak var homeTableView: UITableView!
-    var viewModel = HomeViewModel()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initHomeTableView()
-        self.title = "New York Times"
-    }
-
-}
-
-//MARK: Register TableView Cells
-extension ViewController {
-    private func registerHomeTableViewCell() {
-        homeTableView.register(UINib(nibName: HomeTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: HomeTableViewCell.identifier)
-    }
-    
-    private func initHomeTableView() {
-        registerHomeTableViewCell()
-        homeTableView.dataSource = self
-        homeTableView.delegate = self
-    }
-}
-
-extension ViewController {
-    
-    func navigateToDetails() {
-        let vc = ArticlesListViewViewController.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-}
-
-/*extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
@@ -53,8 +21,12 @@ extension ViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell
         else { return UITableViewCell() }
         let title = viewModel.rowTitleForIndex(indexPath: indexPath)
-        cell.leftLabel.text = title
+        cell.configureCell(text: title)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigateToDetails()
     }
 }
 
@@ -76,4 +48,5 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.sectionTitle(section: section)
     }
-}*/
+}
+
