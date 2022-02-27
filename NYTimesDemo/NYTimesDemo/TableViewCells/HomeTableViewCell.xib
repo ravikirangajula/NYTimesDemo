@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,22 +23,26 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAU-W6-OOU">
-                        <rect key="frame" x="258" y="6.5" width="46" height="31"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvv-Gq-40y">
+                        <rect key="frame" x="286" y="10" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="QzC-TK-ZZ1"/>
+                            <constraint firstAttribute="height" constant="24" id="efW-jR-YhO"/>
+                        </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="pPj-Zw-WHu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Chp-6X-FT4"/>
-                    <constraint firstAttribute="trailing" secondItem="vAU-W6-OOU" secondAttribute="trailing" constant="16" id="JcD-ya-xlS"/>
-                    <constraint firstItem="vAU-W6-OOU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hPE-lT-ts0"/>
+                    <constraint firstAttribute="trailing" secondItem="Zvv-Gq-40y" secondAttribute="trailing" constant="10" id="NHb-ih-A76"/>
                     <constraint firstItem="pPj-Zw-WHu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nuU-QO-PIM"/>
+                    <constraint firstItem="Zvv-Gq-40y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="z1W-hX-AWx"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="detailButton" destination="vAU-W6-OOU" id="Buo-qm-Zfl"/>
+                <outlet property="detailButton" destination="Zvv-Gq-40y" id="A2p-MH-4aR"/>
                 <outlet property="leftLabel" destination="pPj-Zw-WHu" id="vdR-jH-GeS"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>

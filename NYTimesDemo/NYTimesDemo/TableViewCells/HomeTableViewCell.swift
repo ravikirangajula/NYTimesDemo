@@ -9,7 +9,11 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var detailButton: UIButton!
+    @IBOutlet weak var detailButton: UIButton! {
+        didSet {
+            detailButton.titleLabel?.text = ""
+        }
+    }
     @IBOutlet weak var leftLabel: UILabel!
     static let identifier = "HomeTableViewCell"
     
