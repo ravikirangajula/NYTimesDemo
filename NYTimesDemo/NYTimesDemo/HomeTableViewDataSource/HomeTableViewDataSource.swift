@@ -26,7 +26,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigateToDetails()
+        self.navigateToDetails(with: viewModel.rowTitleForIndex(indexPath: indexPath))
     }
 }
 

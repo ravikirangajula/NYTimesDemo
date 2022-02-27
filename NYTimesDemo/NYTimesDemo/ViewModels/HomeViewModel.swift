@@ -34,4 +34,17 @@ extension HomeViewModel {
     func rowTitleForIndex(indexPath: IndexPath) -> String {
         return Array(tableViewDataSource.values)[indexPath.section][indexPath.row]
     }
+    
+    func getArticleType(title: String) -> ArticleType {
+        switch title {
+        case "Most Viewed":
+            return .MOSTVIEWED
+        case "Most Shared":
+            return .MOSTSHARED
+        case "Most Emailed":
+            return .MOSTEMAILED
+        default:
+            return .SEARCHRESULT
+        }
+    }
 }

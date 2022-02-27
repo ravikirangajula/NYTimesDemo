@@ -11,6 +11,7 @@ class ArticlesListViewViewController: BaseViewController {
     
     @IBOutlet weak var listTableView: UITableView!
     var viewModel: ArticlesListViewModel?
+    var typeOfArticle: ArticleType?
     
     static func instantiate() -> ArticlesListViewViewController {
       let vc = instantiate(viewControllerIdentifier: "ArticlesListViewViewController") as! ArticlesListViewViewController
@@ -21,7 +22,7 @@ class ArticlesListViewViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "Articles"
         initArticleListTableView()
-        viewModel = ArticlesListViewModel(id: "hi")
+        viewModel = ArticlesListViewModel(type: typeOfArticle)
     }
     
     override func viewWillAppear(_ animated: Bool) {

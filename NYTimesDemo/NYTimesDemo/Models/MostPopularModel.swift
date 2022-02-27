@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MostEmailedModel: Codable {
+struct MostPopularModel: Codable {
     var status: String?
     var copyright: String?
     var resultsCount: Int?
