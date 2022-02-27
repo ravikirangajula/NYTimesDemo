@@ -16,7 +16,7 @@ enum ArticleType {
 class ArticlesListViewModel: NSObject {
     
     var queryString: String?
-    var mostPopularResults: [results]?
+    var mostPopularResults: [Results]?
     var reloadTableView: (() -> ())?
     
     override init() {
@@ -40,7 +40,7 @@ class ArticlesListViewModel: NSObject {
 }
 
 extension ArticlesListViewModel {
-    func getItem(for row: Int) -> results? {
+    func getItem(for row: Int) -> Results? {
         return mostPopularResults?[row]
     }
     

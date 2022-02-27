@@ -11,7 +11,7 @@ struct MostPopularModel: Codable {
     var status: String?
     var copyright: String?
     var resultsCount: Int?
-    var results: [results]?
+    var results: [Results]?
     
     enum CodingKeys:String, CodingKey {
        case status
@@ -22,7 +22,7 @@ struct MostPopularModel: Codable {
 }
 
 
-struct results: Codable {
+struct Results: Codable {
     var id: Int?
     var published_date: String?
     var updated: String?

@@ -9,7 +9,7 @@ import UIKit
 
 class ArticlesSearchViewModel: NSObject {
     var queryString:String?
-    var searchResults: [docs]?
+    var searchResults: [Docs]?
     var reloadTableView: (() -> ())?
 
     override init() {
@@ -23,7 +23,7 @@ class ArticlesSearchViewModel: NSObject {
 }
 
 extension ArticlesSearchViewModel {
-    func getItem(for row: Int) -> docs? {
+    func getItem(for row: Int) -> Docs? {
         return searchResults?[row]
     }
     

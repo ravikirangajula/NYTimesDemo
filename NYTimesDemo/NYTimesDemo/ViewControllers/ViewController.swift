@@ -21,6 +21,7 @@ class ViewController: BaseViewController {
 
 //MARK: Register TableView Cells
 extension ViewController {
+    
     private func registerHomeTableViewCell() {
         homeTableView.register(UINib(nibName: HomeTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: HomeTableViewCell.identifier)
     }

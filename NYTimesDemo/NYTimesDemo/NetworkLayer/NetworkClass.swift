@@ -11,13 +11,13 @@ import UIKit
 enum httpMethodType:String {
     case GET = "GET"
     case POST = "POST"
-    case DELETE = "DELETE"
 }
 
 class NetworkClass {
     typealias JSONParseCompletionHandler = (Decodable?, Error?) -> Void
     
     static func getRequest<T: Decodable>(with url: String, decodingType: T.Type, completionHandler completion: @escaping JSONParseCompletionHandler) -> ()  {
+        
         guard let url = URL(string: url) else { return }
         let urlSessionObject = URLSession.shared
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)

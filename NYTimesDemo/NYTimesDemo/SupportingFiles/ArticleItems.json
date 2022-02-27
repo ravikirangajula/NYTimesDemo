@@ -1,0 +1,10 @@
+[
+    {
+        "sectionTitle": "Search",
+        "items":["Search Articles"]
+    },
+    {
+        "sectionTitle": "Popular",
+        "items":["Most Viewed", "Most Shared", "Most Emailed"]
+    }
+]

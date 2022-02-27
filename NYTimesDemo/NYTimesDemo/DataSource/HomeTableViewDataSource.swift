@@ -32,12 +32,13 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 80
+        return 50
     }
+    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = UIColor.lightGray
+        view.tintColor = UIColor.lightText
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 22.0)
         header.textLabel?.textColor = .black
     }
     

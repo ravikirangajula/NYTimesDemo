@@ -10,7 +10,7 @@ import Foundation
 struct SearchModel: Codable {
     var status: String?
     var copyright: String?
-    var response: response?
+    var response: Response?
     
     enum CodingKeys:String, CodingKey {
        case status
@@ -19,9 +19,9 @@ struct SearchModel: Codable {
     }
 }
 
-struct response: Codable {
-    var docs: [docs]?
-    var meta: meta?
+struct Response: Codable {
+    var docs: [Docs]?
+    var meta: Meta?
     
     enum CodingKeys:String, CodingKey {
        case docs
@@ -29,11 +29,11 @@ struct response: Codable {
     }
 }
 
-struct docs: Codable {
+struct Docs: Codable {
     var abstract: String?
     var webUrl: String?
     var snippet: String?
-    var headline: headline?
+    var headline: Headline?
     var pubDate: String?
     
     enum CodingKeys:String, CodingKey {
@@ -45,7 +45,7 @@ struct docs: Codable {
     }
 }
 
-struct headline: Codable {
+struct Headline: Codable {
     var main: String?
     var printHeadline: String?
     enum CodingKeys:String, CodingKey {
@@ -54,7 +54,7 @@ struct headline: Codable {
     }
 }
 
-struct meta: Codable {
+struct Meta: Codable {
     var hits: Int?
     var offset: Int?
     var time: Int?

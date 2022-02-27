@@ -21,10 +21,25 @@ class ArticlesSearchViewController: BaseViewController {
     }
     
     @IBAction func tapOnSearchButton(_ sender: Any) {
+        hideKeyBoard()
         let vc = ArticlesListViewViewController.instantiate()
         vc.typeOfArticle = .SEARCHRESULT
         vc.queryString = searchField.text
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    private func hideKeyBoard() {
+        self.searchField.resignFirstResponder()
+    }
+    
+}
+
+extension ArticlesSearchViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyBoard()
+        return true
+    }
+    
     
 }

@@ -11,21 +11,21 @@ class ArticlesDetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var publishedDatelabel: UILabel!
-    var detailItem: results?
+    var detailItem: Results?
     
     static let identifier = "ArticlesDetailsTableViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
     }
 
-    func configureCell(item: results) {
+    func configureCell(item: Results) {
         self.titleLabel.text = item.title
         self.publishedDatelabel.text = item.published_date
     }
     
-    func configureSearchCell(item: docs) {
+    func configureSearchCell(item: Docs) {
         self.titleLabel.text = item.headline?.main
         self.publishedDatelabel.text = item.pubDate
     }

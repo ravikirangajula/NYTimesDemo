@@ -8,31 +8,31 @@
 import UIKit
 
 class HomeViewModel: NSObject {
-    
-    var tableViewDataSource: [String: [String]] = ["Search":["Search Articles"], "Popular":["Most Viewed", "Most Shared", "Most Emailed"]]
-    
+
+    var dataFetcherModel: JsonLoader?
+
     override init() {
         super.init()
+        dataFetcherModel = JsonLoader()
     }
-
 }
 
 extension HomeViewModel {
 
     func numberOfSections() -> Int {
-        return tableViewDataSource.count
+        return dataFetcherModel?.resObject?.count ?? 0
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
-        return Array(tableViewDataSource)[section].value.count
+        return dataFetcherModel?.resObject?[section].items?.count ?? 0
     }
     
     func sectionTitle(section: Int) -> String {
-        return Array(tableViewDataSource.keys)[section]
+        return dataFetcherModel?.resObject?[section].sectionTitle ?? ""
     }
     
     func rowTitleForIndex(indexPath: IndexPath) -> String {
-        return Array(tableViewDataSource.values)[indexPath.section][indexPath.row]
+        return dataFetcherModel?.resObject?[indexPath.section].items?[indexPath.row] ?? ""
     }
     
     func getArticleType(title: String) -> ArticleType {
