@@ -35,8 +35,13 @@ extension ViewController {
 extension ViewController {
     
     func navigateToDetails(with itemType: String) {
-        let vc = ArticlesListViewViewController.instantiate()
-        vc.typeOfArticle = viewModel.getArticleType(title: itemType)
-        self.navigationController?.pushViewController(vc, animated: true)
+        if viewModel.getArticleType(title: itemType) == .SEARCHRESULT {
+            let vc = ArticlesSearchViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = ArticlesListViewViewController.instantiate()
+            vc.typeOfArticle = viewModel.getArticleType(title: itemType)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

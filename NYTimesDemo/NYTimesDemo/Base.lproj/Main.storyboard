@@ -69,6 +69,57 @@
             </objects>
             <point key="canvasLocation" x="1739" y="39"/>
         </scene>
+        <!--Articles Search View Controller-->
+        <scene sceneID="nsa-5L-314">
+            <objects>
+                <viewController storyboardIdentifier="ArticlesSearchViewController" id="A9O-Yc-krM" customClass="ArticlesSearchViewController" customModule="NYTimesDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="31B-9x-cCJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Articles here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LGP-LY-Dht">
+                                <rect key="frame" x="41.5" y="144" width="331" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="W25-oA-ABB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9Z-Uz-yP4">
+                                <rect key="frame" x="134.5" y="244" width="145" height="50"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hJv-7o-GiX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapOnSearchButton:" destination="A9O-Yc-krM" eventType="touchUpInside" id="JZa-uo-RB4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A7L-5l-scJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LGP-LY-Dht" firstAttribute="centerX" secondItem="A7L-5l-scJ" secondAttribute="centerX" id="3d4-Sc-2u9"/>
+                            <constraint firstItem="x9Z-Uz-yP4" firstAttribute="top" secondItem="LGP-LY-Dht" secondAttribute="bottom" constant="40" id="RUP-dX-B6v"/>
+                            <constraint firstItem="x9Z-Uz-yP4" firstAttribute="centerX" secondItem="A7L-5l-scJ" secondAttribute="centerX" id="bX1-Fx-wYI"/>
+                            <constraint firstItem="x9Z-Uz-yP4" firstAttribute="width" secondItem="31B-9x-cCJ" secondAttribute="width" multiplier="0.35" id="fcy-ZT-diD"/>
+                            <constraint firstItem="LGP-LY-Dht" firstAttribute="width" secondItem="31B-9x-cCJ" secondAttribute="width" multiplier="0.8" id="vew-wl-GBc"/>
+                            <constraint firstItem="LGP-LY-Dht" firstAttribute="top" secondItem="A7L-5l-scJ" secondAttribute="top" constant="100" id="yGF-EE-Gd7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchField" destination="LGP-LY-Dht" id="hzM-is-hDp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T02-2T-iQu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2526.0869565217395" y="38.839285714285715"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FSg-On-ZPt">
             <objects>

@@ -25,6 +25,11 @@ class ArticlesDetailsTableViewCell: UITableViewCell {
         self.publishedDatelabel.text = item.published_date
     }
     
+    func configureSearchCell(item: docs) {
+        self.titleLabel.text = item.headline?.main
+        self.publishedDatelabel.text = item.pubDate
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

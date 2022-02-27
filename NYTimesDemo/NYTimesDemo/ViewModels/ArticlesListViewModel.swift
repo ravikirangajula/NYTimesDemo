@@ -15,7 +15,7 @@ enum ArticleType {
 }
 class ArticlesListViewModel: NSObject {
     
-    var requestId: String?
+    var queryString: String?
     var mostPopularResults: [results]?
     var reloadTableView: (() -> ())?
     
@@ -23,8 +23,9 @@ class ArticlesListViewModel: NSObject {
         super.init()
     }
     
-    convenience init(type:ArticleType?) {
+    convenience init(type:ArticleType?, queryString:String = "") {
         self.init()
+        self.queryString = queryString
         switch type {
         case .MOSTVIEWED:
             getMostViewedList()
@@ -32,9 +33,7 @@ class ArticlesListViewModel: NSObject {
             getMostSharedList()
         case .MOSTEMAILED:
             getMostEmailedList()
-        case .SEARCHRESULT:
-            getMostEmailedList()
-        case .none:
+        default:
             break
         }
     }
@@ -54,7 +53,7 @@ extension ArticlesListViewModel {
 extension ArticlesListViewModel {
     
     private func getMostEmailedList() {
-        let url = BASE_URL + MOST_EMAILED_END_POINT + API_KEY
+        let url = MOST_POPULAR_BASE_SCHEMA + MOST_EMAILED_END_POINT + API_KEY
         NetworkClass.getRequest(with: url, decodingType: MostPopularModel.self) { [weak self] res, Error in
             guard let self = self else { return }
             if let responseObj = res as? MostPopularModel {
@@ -66,7 +65,7 @@ extension ArticlesListViewModel {
     }
     
     private func getMostSharedList() {
-        let url = BASE_URL + MOST_SHARED_END_POINT + API_KEY
+        let url = MOST_POPULAR_BASE_SCHEMA + MOST_SHARED_END_POINT + API_KEY
         NetworkClass.getRequest(with: url, decodingType: MostPopularModel.self) { [weak self] res, Error in
             guard let self = self else { return }
             if let responseObj = res as? MostPopularModel {
@@ -78,7 +77,7 @@ extension ArticlesListViewModel {
     }
     
     private func getMostViewedList() {
-        let url = BASE_URL + MOST_VIEWED_END_POINT + API_KEY
+        let url = MOST_POPULAR_BASE_SCHEMA + MOST_VIEWED_END_POINT + API_KEY
         NetworkClass.getRequest(with: url, decodingType: MostPopularModel.self) { [weak self] res, Error in
             guard let self = self else { return }
             if let responseObj = res as? MostPopularModel {

@@ -10,6 +10,11 @@
 		B82997A827CB5DF300FE3092 /* ArticlesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82997A727CB5DF300FE3092 /* ArticlesListViewModel.swift */; };
 		B82997AB27CB600400FE3092 /* MostPopularModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82997AA27CB600400FE3092 /* MostPopularModel.swift */; };
 		B82997AE27CB6E9000FE3092 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82997AD27CB6E9000FE3092 /* Constants.swift */; };
+		B82997B227CB8AA600FE3092 /* ArticlesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82997B127CB8AA600FE3092 /* ArticlesSearchViewController.swift */; };
+		B82997B427CBA82300FE3092 /* ArticlesSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82997B327CBA82300FE3092 /* ArticlesSearchViewModel.swift */; };
+		B82997B627CBB0B200FE3092 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82997B527CBB0B200FE3092 /* SearchModel.swift */; };
+		B82997B827CBBAB500FE3092 /* MostPopularDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82997B727CBBAB500FE3092 /* MostPopularDataSource.swift */; };
+		B82997BA27CBBF6400FE3092 /* SearchArticleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82997B927CBBF6400FE3092 /* SearchArticleDataSource.swift */; };
 		B836FF0027CB26BD006E6DB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B836FEFF27CB26BD006E6DB3 /* AppDelegate.swift */; };
 		B836FF0227CB26BD006E6DB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B836FF0127CB26BD006E6DB3 /* SceneDelegate.swift */; };
 		B836FF0427CB26BD006E6DB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B836FF0327CB26BD006E6DB3 /* ViewController.swift */; };
@@ -51,6 +56,11 @@
 		B82997A727CB5DF300FE3092 /* ArticlesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListViewModel.swift; sourceTree = "<group>"; };
 		B82997AA27CB600400FE3092 /* MostPopularModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularModel.swift; sourceTree = "<group>"; };
 		B82997AD27CB6E9000FE3092 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B82997B127CB8AA600FE3092 /* ArticlesSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesSearchViewController.swift; sourceTree = "<group>"; };
+		B82997B327CBA82300FE3092 /* ArticlesSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesSearchViewModel.swift; sourceTree = "<group>"; };
+		B82997B527CBB0B200FE3092 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		B82997B727CBBAB500FE3092 /* MostPopularDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularDataSource.swift; sourceTree = "<group>"; };
+		B82997B927CBBF6400FE3092 /* SearchArticleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchArticleDataSource.swift; sourceTree = "<group>"; };
 		B836FEFC27CB26BD006E6DB3 /* NYTimesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B836FEFF27CB26BD006E6DB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B836FF0127CB26BD006E6DB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				B82997AA27CB600400FE3092 /* MostPopularModel.swift */,
+				B82997B527CBB0B200FE3092 /* SearchModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,6 +159,7 @@
 				B836FEFF27CB26BD006E6DB3 /* AppDelegate.swift */,
 				B836FF0127CB26BD006E6DB3 /* SceneDelegate.swift */,
 				B836FF0327CB26BD006E6DB3 /* ViewController.swift */,
+				B82997B127CB8AA600FE3092 /* ArticlesSearchViewController.swift */,
 				B836FF3D27CB55F2006E6DB3 /* ArticlesListViewViewController.swift */,
 				B836FF3F27CB57BD006E6DB3 /* BaseViewController.swift */,
 				B836FF0527CB26BD006E6DB3 /* Main.storyboard */,
@@ -191,6 +203,7 @@
 			children = (
 				B836FF3527CB3040006E6DB3 /* HomeViewModel.swift */,
 				B82997A727CB5DF300FE3092 /* ArticlesListViewModel.swift */,
+				B82997B327CBA82300FE3092 /* ArticlesSearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -199,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				B836FF3827CB4C08006E6DB3 /* HomeTableViewDataSource.swift */,
+				B82997B727CBBAB500FE3092 /* MostPopularDataSource.swift */,
+				B82997B927CBBF6400FE3092 /* SearchArticleDataSource.swift */,
 			);
 			path = HomeTableViewDataSource;
 			sourceTree = "<group>";
@@ -347,15 +362,20 @@
 				B836FF0427CB26BD006E6DB3 /* ViewController.swift in Sources */,
 				B836FF0027CB26BD006E6DB3 /* AppDelegate.swift in Sources */,
 				B836FF3227CB2B31006E6DB3 /* HomeTableViewCell.swift in Sources */,
+				B82997B627CBB0B200FE3092 /* SearchModel.swift in Sources */,
 				B836FF3927CB4C08006E6DB3 /* HomeTableViewDataSource.swift in Sources */,
 				B836FF3E27CB55F2006E6DB3 /* ArticlesListViewViewController.swift in Sources */,
+				B82997B227CB8AA600FE3092 /* ArticlesSearchViewController.swift in Sources */,
+				B82997BA27CBBF6400FE3092 /* SearchArticleDataSource.swift in Sources */,
 				B82997A827CB5DF300FE3092 /* ArticlesListViewModel.swift in Sources */,
 				B836FF4027CB57BD006E6DB3 /* BaseViewController.swift in Sources */,
+				B82997B827CBBAB500FE3092 /* MostPopularDataSource.swift in Sources */,
 				B82997AE27CB6E9000FE3092 /* Constants.swift in Sources */,
 				B836FF3C27CB54EF006E6DB3 /* NetworkClass.swift in Sources */,
 				B836FF4327CB5956006E6DB3 /* ArticlesDetailsTableViewCell.swift in Sources */,
 				B836FF3627CB3041006E6DB3 /* HomeViewModel.swift in Sources */,
 				B82997AB27CB600400FE3092 /* MostPopularModel.swift in Sources */,
+				B82997B427CBA82300FE3092 /* ArticlesSearchViewModel.swift in Sources */,
 				B836FF0227CB26BD006E6DB3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
