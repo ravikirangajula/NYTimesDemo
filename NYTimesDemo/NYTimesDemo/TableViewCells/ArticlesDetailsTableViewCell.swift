@@ -22,12 +22,12 @@ class ArticlesDetailsTableViewCell: UITableViewCell {
 
     func configureCell(item: Results) {
         self.titleLabel.text = item.title
-        self.publishedDatelabel.text = item.published_date
+        self.publishedDatelabel.text = "Published on: \(item.published_date ?? "")"
     }
     
     func configureSearchCell(item: Docs) {
         self.titleLabel.text = item.headline?.main
-        self.publishedDatelabel.text = item.pubDate
+        self.publishedDatelabel.text = "Published on: \(item.pubDate ?? "")"
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
