@@ -13,12 +13,15 @@ class ArticlesListViewViewController: BaseViewController {
     var mostPopularDataSource: MostPopularDataSource?
     var searchDataSource: SearchArticleDataSource?
     var typeOfArticle: ArticleType?
-    var queryString: String?
+    var mostPopularResults: [Results]?
+    var searchResults: [Docs]?
+    
     lazy var viewModel: ArticlesListViewModel = { [weak self] in
-        return  ArticlesListViewModel(type: typeOfArticle, queryString: queryString ?? "")
+        return  ArticlesListViewModel(type: typeOfArticle, results: mostPopularResults)
     }()
-    lazy var searchViewModel: ArticlesSearchViewModel = { [weak self] in
-        return ArticlesSearchViewModel(queryString: queryString ?? "")
+    
+    lazy var articlesListSearchViewModel: ArtcilesListSearchViewModel = { [weak self] in
+        return ArtcilesListSearchViewModel(results: searchResults)
     }()
 
     static func instantiate() -> ArticlesListViewViewController {
@@ -28,38 +31,24 @@ class ArticlesListViewViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Articles"
         if typeOfArticle == .SEARCHRESULT {
-            self.searchDataSource = SearchArticleDataSource(articlesList: searchViewModel)
+            self.title = articlesListSearchViewModel.getTitle()
+            self.searchDataSource = SearchArticleDataSource(articlesList: articlesListSearchViewModel)
         } else {
-            viewModel = ArticlesListViewModel(type: typeOfArticle, queryString: queryString ?? "")
-            self.mostPopularDataSource = MostPopularDataSource(articlesList: self.viewModel)
+            self.title = viewModel.getTitle()
+            self.mostPopularDataSource = MostPopularDataSource(articlesList: viewModel)
         }
         initArticleListTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        searchViewModel.reloadTableView = { [unowned self] in
-            self.reloadTableView()
-        }
-        
-        viewModel.reloadTableView = { [unowned self] in
-            self.reloadTableView()
-        }
-    }
-}
-
-extension ArticlesListViewViewController {
-    private func reloadTableView() {
-        DispatchQueue.main.async {
-            self.listTableView.reloadData()
-        }
     }
 }
 
 //MARK: Register TableView Cells
 extension ArticlesListViewViewController {
+    
     private func registerHomeTableViewCell() {
         listTableView.register(UINib(nibName: ArticlesDetailsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ArticlesDetailsTableViewCell.identifier)
     }

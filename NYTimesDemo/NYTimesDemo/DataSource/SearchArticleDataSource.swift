@@ -8,9 +8,10 @@
 import UIKit
 
 class SearchArticleDataSource: NSObject {
-    var viewModel: ArticlesSearchViewModel?
     
-    convenience init(articlesList: ArticlesSearchViewModel?) {
+    var viewModel: ArtcilesListSearchViewModel?
+    
+    convenience init(articlesList: ArtcilesListSearchViewModel?) {
         self.init()
         self.viewModel = articlesList
     }

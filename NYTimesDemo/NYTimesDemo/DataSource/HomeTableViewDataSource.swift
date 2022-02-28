@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension ViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
     }

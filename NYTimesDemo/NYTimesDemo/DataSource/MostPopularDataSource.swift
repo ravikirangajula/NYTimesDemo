@@ -8,6 +8,7 @@
 import UIKit
 
 class MostPopularDataSource: NSObject {
+   
     var viewModel: ArticlesListViewModel?
     
     convenience init(articlesList: ArticlesListViewModel?) {
